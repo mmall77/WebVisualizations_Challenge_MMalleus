@@ -1,1 +1,1 @@
-# WebVisualizations_Challenge_MMalleus
+# Web_Design_Challenge_Malleus

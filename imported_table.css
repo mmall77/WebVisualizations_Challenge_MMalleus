@@ -1,0 +1,107 @@
+/*  ##############################################  */
+/*  TABLE PAGE CSS FORMATTING   */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+/* Zebra stripes */
+tr:nth-of-type(odd) {
+  background: #eee;
+}
+th {
+  background: #333;
+  color: white;
+  font-weight: bold;
+}
+td,
+th {
+  padding: 6px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+/* .span4 {  
+    height: 300px !important;
+    overflow: scroll;
+}​ */
+
+/*
+Reformat for screens smaller than 760px
+*/
+@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Force it out of it table structure */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  /* Hide headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+  }
+
+  td {
+    /* Change their behavior to be like "rows" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    /* Now like table headers*/
+    position: absolute;
+    /* Top/left vals mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  /*
+	Labels
+	*/
+  td:nth-of-type(1):before {
+    content: 'City_ID';
+  }
+  td:nth-of-type(2):before {
+    content: 'City';
+  }
+  td:nth-of-type(3):before {
+    content: 'Cloudiness';
+  }
+  td:nth-of-type(4):before {
+    content: 'Country';
+  }
+  td:nth-of-type(5):before {
+    content: 'Date';
+  }
+  td:nth-of-type(6):before {
+    content: 'Humidity';
+  }
+  td:nth-of-type(7):before {
+    content: 'Lat';
+  }
+  td:nth-of-type(8):before {
+    content: 'Lng';
+  }
+  td:nth-of-type(9):before {
+    content: 'Max Temp';
+  }
+  td:nth-of-type(10):before {
+    content: 'Wind Speed';
+  }
+}
